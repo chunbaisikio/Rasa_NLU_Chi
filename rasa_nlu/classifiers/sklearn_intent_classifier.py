@@ -105,7 +105,7 @@ class SklearnIntentClassifier(Component):
 
         :param y: List of labels to convert to numeric representation"""
 
-        return self.le.inverse_transform(y)
+        return self.le.inverse_transform(np.squeeze(y))
 
     def train(self, training_data, cfg, **kwargs):
         # type: (TrainingData, RasaNLUModelConfig, **Any) -> None
